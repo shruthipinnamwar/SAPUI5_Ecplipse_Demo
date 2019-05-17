@@ -3,24 +3,26 @@
 	<head>
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta http-equiv='Content-Type' content='text/html;charset=UTF-8'/>
-
-		<script src="resources/sap-ui-core.js"
-				id="sap-ui-bootstrap"
-				data-sap-ui-libs="sap.m"
-				data-sap-ui-theme="sap_bluecrystal">
+		<script
+			id="sap-ui-bootstrap"
+			src="resources/sap-ui-core.js"
+			data-sap-ui-theme="sap_bluecrystal"
+			data-sap-ui-libs="sap.m, sap.ui.layout"
+			data-sap-ui-xx-bindingSyntax="complex"
+			data-sap-ui-resourceroots='{
+				"ztest_app": "./"
+			}' >
 		</script>
-		<!-- only load the mobile lib "sap.m" and the "sap_bluecrystal" theme -->
-
+                
+                <!-- Calling Componet-name of Component.js of UI5 -->   
 		<script>
-				sap.ui.localResources("ztest_app");
-				var app = new sap.m.App({initialPage:"idMaster1"});
-				var page = sap.ui.view({id:"idMaster1", viewName:"ztest_app.Master", type:sap.ui.core.mvc.ViewType.XML});
-				app.addPage(page);
-				app.placeAt("content");
+			new sap.m.Shell({
+				app : new sap.ui.core.ComponentContainer({
+					name : "ztest_app"
+				})
+			}).placeAt("content");
 		</script>
-
 	</head>
-	<body class="sapUiBody" role="application">
-		<div id="content"></div>
-	</body>
+	<body class="sapUiBody" id="content">
+	</body>	
 </html>
