@@ -1,8 +1,7 @@
 <core:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m"
 		controllerName="ztest_app.Master" xmlns:html="http://www.w3.org/1999/xhtml">
-	<Page title="Title Page">
+	<Page title="Title Page For Demo">
 		<content>
-	
 		</content>
 	</Page>
 </core:View>
